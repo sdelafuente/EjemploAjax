@@ -8,11 +8,12 @@ if(isset($_SESSION['registrado']))
 		
 			<h4 class="widgettitle">Botones ABM</h4>
 			<ul>
-				<li><a class="MiBotonUTN" href="#">Grilla</a></li>
+				<li><a onclick="MostrarGrilla()" class="MiBotonUTN" >Grilla</a></li>
 				<li><a class="MiBotonUTN" >Alta</a></li>
 				<li><a class="MiBotonUTN">otro </a></li>
 			</ul>
 		</section>
+
 	<?php 
 	}else
 	{

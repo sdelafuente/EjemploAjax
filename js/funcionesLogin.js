@@ -12,8 +12,16 @@ function validarLogin()
 		}
 	});
 	funcionAjax.done(function(retorno){
-			MostarBotones();
-			MostarLogin();
+		//alert(retorno);
+			if(retorno!="No-esta"){	
+				MostarBotones();
+				MostarLogin();
+				$("#BotonLogin").html("Salir");
+				$("#usuario").val("usuario: "+retorno);
+			}else
+			{
+				$("#informe").html("usuario o clave incorrecta");	
+			}
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesABM").html(":(");
@@ -30,6 +38,9 @@ function deslogear()
 	funcionAjax.done(function(retorno){
 			MostarBotones();
 			MostarLogin();
+			$("#usuario").val("Sin usuario.");
+			$("#BotonLogin").html("Login");
+		
 	});	
 }
 function MostarBotones()
@@ -41,6 +52,6 @@ function MostarBotones()
 	});
 	funcionAjax.done(function(retorno){
 		$("#botonesABM").html(retorno);
-		$("#informe").html("Correcto BOTONES!!!");	
+		//$("#informe").html("Correcto BOTONES!!!");	
 	});
 }

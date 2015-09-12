@@ -5,10 +5,9 @@ $clave=$_POST['clave'];
 
 if($usuario=="octavio@admin.com.ar" && $clave==1234){
 	$_SESSION['registrado']="octavio";
-	echo"esta";
+	echo $_SESSION['registrado'];
 }else
 {
-echo"No esta";
+	echo"No-esta";
 }
-
- ?>
+?>

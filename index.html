@@ -12,13 +12,14 @@
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 <!-- media queries css -->
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link href="css/media-queries.css" rel="stylesheet" type="text/css">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
  <link rel="icon" href="http://www.octavio.com.ar/favicon.ico">
 <script type="text/javascript" src="js/funcionesAjax.js"></script>
-<script type="text/javascript" src="js/funcionesLogin.js">
+<script type="text/javascript" src="js/funcionesLogin.js"></script>
+<script type="text/javascript" src="js/funcionesABM.js"></script>
 
-</script>
 </head>
 
 <body>
@@ -35,10 +36,10 @@
 		<nav>
 			<ul id="main-nav" class="clearfix">
 				<li><a onclick="MostrarError()">Ajax error</a></li>
-				<li><a onclick="MostrarSinParametros()">sin Parametros</a> </li>
+				<li><a onclick="MostrarSinParametros()">Sin Parametros</a> </li>
 				<li><a onclick="Mostrar('foto')">Foto(parametros y POST) </a> </li>
 				<li><a onclick="Mostrar('video')">Video(parametros y POST)</a> </li>
-				<li><a onclick="MostarLogin()">Login</a> </li>
+				<li><a onclick="MostarLogin()" id="BotonLogin" >Login</a> </li><li><a onclick="MostrarGrilla()">MostrarGrilla</a> </li>
 			</ul>
 			<!-- /#main-nav --> 
 		</nav>

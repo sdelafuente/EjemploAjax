@@ -64,7 +64,7 @@ function MostarLogin()
 	});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
-		$("#informe").html("Correcto!!!");	
+		$("#informe").html("Correcto Form login!!!");	
 	});
 	funcionAjax.fail(function(retorno){
 		$("#botonesABM").html(":(");

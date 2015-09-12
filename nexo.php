@@ -17,6 +17,9 @@ switch ($queHago) {
 	case 'MostarBotones':
 			include("partes/botonesABM.php");
 		break;
+	case 'MostrarGrilla':
+			include("partes/grilla.php");
+		break;
 	default:
 		# code...
 		break;
