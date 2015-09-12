@@ -40,7 +40,6 @@ function deslogear()
 			MostarLogin();
 			$("#usuario").val("Sin usuario.");
 			$("#BotonLogin").html("Login");
-		
 	});	
 }
 function MostarBotones()

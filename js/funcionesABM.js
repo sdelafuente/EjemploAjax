@@ -1,25 +1,22 @@
 function BorrarCD(idParametro)
 {
+	alert(idParametro);
 		var funcionAjax=$.ajax({
-		url:"php/validarUsuario.php",
+		url:"nexo.php",
 		type:"post",
 		data:{
-			usuario:varUsuario,
-			clave:varClave
+			queHacer:"BorrarCD",
+			id:idParametro	
 		}
 	});
 	funcionAjax.done(function(retorno){
-			MostarBotones();
-			MostarLogin();
-			
+		$("#informe").html("cantidad de eliminados "+ retorno);	
+		MostrarGrilla();
 	});
-	funcionAjax.fail(function(retorno){
-		$("#botonesABM").html(":(");
+	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	
-	});
-	
+	});	
 }
-
 function MostrarGrilla()
 {		
 	var funcionAjax=$.ajax({
