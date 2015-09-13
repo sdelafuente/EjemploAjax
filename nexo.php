@@ -11,14 +11,18 @@ switch ($queHago) {
 	case 'video':
 			include("partes/video.html");
 		break;
-	case 'MostarLogin':
-			include("partes/login.php");
-		break;
+	
 	case 'MostarBotones':
 			include("partes/botonesABM.php");
 		break;
 	case 'MostrarGrilla':
-			include("partes/grilla.php");
+			include("partes/formGrilla.php");
+		break;
+	case 'MostarLogin':
+			include("partes/formLogin.php");
+		break;
+	case 'MostrarFormAlta':
+			include("partes/formCd.php");
 		break;
 	case 'BorrarCD':
 			$cd = new cd();

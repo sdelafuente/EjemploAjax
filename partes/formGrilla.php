@@ -25,17 +25,9 @@ foreach ($arrayDeCds as $cd) {
 			<td>$cd->cantante</td>
 			<td>$cd->titulo</td>
 			<td>$cd->año</td>
-		</tr>
-   ";
+		</tr>   ";
 }
-
 		 ?>
-
-
-		
-
-
-
 	</tbody>
 </table>
 

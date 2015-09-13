@@ -2,15 +2,15 @@
 session_start();
 if(isset($_SESSION['registrado']))
 {
-	echo "<section class='widget'><h2> Bienvenido: ". $_SESSION['registrado']."</h2>";
+	echo "<section class='widget'><center><h2> Bienvenido: ". $_SESSION['registrado']."</h2></center>";
 
  ?>
 		
 			<h4 class="widgettitle">Botones ABM</h4>
 			<ul>
-				<li><a onclick="MostrarGrilla()" class="MiBotonUTN" >Grilla</a></li>
-				<li><a class="MiBotonUTN" >Alta</a></li>
-				<li><a class="MiBotonUTN">otro </a></li>
+				<li><a onclick="MostrarGrilla()" class="MiBotonUTN" >Grilla CD</a></li>
+				<li><a onclick="Mostrar('MostrarFormAlta')" class="MiBotonUTN" >Alta CD</a></li>
+			
 			</ul>
 		</section>
 
