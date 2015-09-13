@@ -10,8 +10,9 @@ function BorrarCD(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
-		$("#informe").html("cantidad de eliminados "+ retorno);	
 		MostrarGrilla();
+		$("#informe").html("cantidad de eliminados "+ retorno);	
+		
 	});
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	

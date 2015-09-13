@@ -8,7 +8,7 @@ if(isset($_SESSION['registrado']))
 	echo "<h2> Bienvenido: ". $_SESSION['registrado']."</h2>";
 
  ?>
-<table class="table" >
+<table class="table"  style=" background-color: beige;">
 	<thead>
 		<tr>
 			<th>Editar</th><th>Borrar</th><th>cantante</th><th>disco</th><th>año</th>

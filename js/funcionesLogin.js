@@ -16,7 +16,10 @@ function validarLogin()
 			if(retorno!="No-esta"){	
 				MostarBotones();
 				MostarLogin();
-				$("#BotonLogin").html("Salir");
+
+				$("#BotonLogin").html("Ir a salir<br>-Sesión-");
+				$("#BotonLogin").addClass("btn btn-danger");
+				
 				$("#usuario").val("usuario: "+retorno);
 			}else
 			{
@@ -39,7 +42,10 @@ function deslogear()
 			MostarBotones();
 			MostarLogin();
 			$("#usuario").val("Sin usuario.");
-			$("#BotonLogin").html("Login");
+			$("#BotonLogin").html("Login<br>-Sesión-");
+			$("#BotonLogin").removeClass("btn-danger");
+			$("#BotonLogin").addClass("btn-primary");
+			
 	});	
 }
 function MostarBotones()
