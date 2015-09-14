@@ -10,8 +10,7 @@ switch ($queHago) {
 		break;
 	case 'video':
 			include("partes/video.html");
-		break;
-	
+		break;	
 	case 'MostarBotones':
 			include("partes/botonesABM.php");
 		break;

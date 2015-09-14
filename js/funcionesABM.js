@@ -1,6 +1,6 @@
 function BorrarCD(idParametro)
 {
-	alert(idParametro);
+	//alert(idParametro);
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -29,4 +29,24 @@ function MostrarGrilla()
 		$("#principal").html(retorno);
 		$("#informe").html("Correcto grilla!!!");	
 	});
+}
+function GuardarCD()
+{
+	
+		var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{
+			queHacer:"GuardarCD",
+			id:idParametro	
+		}
+	});
+	funcionAjax.done(function(retorno){
+		MostrarGrilla();
+		$("#informe").html("cantidad de eliminados "+ retorno);	
+		
+	});
+	funcionAjax.fail(function(retorno){	
+		$("#informe").html(retorno.responseText);	
+	});	
 }

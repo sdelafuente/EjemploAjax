@@ -20,8 +20,8 @@ if(isset($_SESSION['registrado']))
 
 foreach ($arrayDeCds as $cd) {
 	echo"<tr>
-			<td><a onclick='editar($cd->id)' class='btn btn-warning'>Editar</a></td>
-			<td><a onclick='BorrarCD($cd->id)' class='btn btn-danger'>Borrar</a></td>
+			<td><a onclick='editar($cd->id)' class='btn btn-warning'> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</a></td>
+			<td><a onclick='BorrarCD($cd->id)' class='btn btn-danger'>   <span class='glyphicon glyphicon-trash'>&nbsp;</span>  Borrar</a></td>
 			<td>$cd->cantante</td>
 			<td>$cd->titulo</td>
 			<td>$cd->año</td>
