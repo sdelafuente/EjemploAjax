@@ -44,7 +44,19 @@ class cd
 			return $consulta->execute();
 
 	 }
-	 public function ModificarCdParametros()
+	
+  
+	 public function InsertarElCd()
+	 {
+				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into cds (titel,interpret,jahr)values('$this->titulo','$this->cantante','$this->año')");
+				$consulta->execute();
+				return $objetoAccesoDato->RetornarUltimoIdInsertado();
+				
+
+	 }
+
+	  public function ModificarCdParametros()
 	 {
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("
@@ -60,19 +72,6 @@ class cd
 			return $consulta->execute();
 	 }
 
-  	public function mostrarDatos()
-	{
-	  	return "Metodo mostar:".$this->titulo."  ".$this->cantante."  ".$this->año;
-	}
-	 public function InsertarElCd()
-	 {
-				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-				$consulta =$objetoAccesoDato->RetornarConsulta("INSERT into cds (titel,interpret,jahr)values('$this->titulo','$this->cantante','$this->año')");
-				$consulta->execute();
-				return $objetoAccesoDato->RetornarUltimoIdInsertado();
-				
-
-	 }
 	 public function InsertarElCdParametros()
 	 {
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
@@ -83,7 +82,17 @@ class cd
 				$consulta->execute();		
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
-	 
+	 public function GuardarCD()
+	 {
+
+	 	if($this->id>0)
+	 		{
+	 			$this->ModificarCdParametros();
+	 		}else {
+	 			$this->InsertarElCdParametros();
+	 		}
+
+	 }
 
 
   	public static function TraerTodoLosCds()
@@ -141,6 +150,9 @@ class cd
 			
 	}
 
-
+	public function mostrarDatos()
+	{
+	  	return "Metodo mostar:".$this->titulo."  ".$this->cantante."  ".$this->año;
+	}
 
 }

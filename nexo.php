@@ -30,6 +30,16 @@ switch ($queHago) {
 			echo $cantidad;
 
 		break;
+	case 'GuardarCD':
+			$cd = new cd();
+			$cd->id=$_POST['id'];
+			$cd->cantante=$_POST['cantante'];
+			$cd->titulo=$_POST['titulo'];
+			$cd->año=$_POST['anio'];
+			$cantidad=$cd->GuardarCD();
+			echo $cantidad;
+
+		break;
 	default:
 		# code...
 		break;

@@ -1,3 +1,17 @@
+function MostrarGrilla()
+{		
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{queHacer:"MostrarGrilla"}
+	});
+	funcionAjax.done(function(retorno){
+		$("#principal").html(retorno);
+		$("#informe").html("Correcto grilla!!!");	
+	});
+}
+
+
 function BorrarCD(idParametro)
 {
 	//alert(idParametro);
@@ -18,32 +32,33 @@ function BorrarCD(idParametro)
 		$("#informe").html(retorno.responseText);	
 	});	
 }
-function MostrarGrilla()
-{		
-	var funcionAjax=$.ajax({
-		url:"nexo.php",
-		type:"post",
-		data:{queHacer:"MostrarGrilla"}
-	});
-	funcionAjax.done(function(retorno){
-		$("#principal").html(retorno);
-		$("#informe").html("Correcto grilla!!!");	
-	});
+function EditarCD(idParametro)
+{
+	alert(idParametro);
+		
 }
+
 function GuardarCD()
 {
-	
+		var id=$("#idCD").val();
+		var cantante=$("#cantante").val();
+		var titulo=$("#titulo").val();
+		var anio=$("#anio").val();
+
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{
 			queHacer:"GuardarCD",
-			id:idParametro	
+			id:id,
+			cantante:cantante,
+			titulo:titulo,
+			anio:anio	
 		}
 	});
 	funcionAjax.done(function(retorno){
 		MostrarGrilla();
-		$("#informe").html("cantidad de eliminados "+ retorno);	
+		$("#informe").html("cantidad de agregados "+ retorno);	
 		
 	});
 	funcionAjax.fail(function(retorno){	
