@@ -1,16 +1,3 @@
-function MostrarGrilla()
-{		
-	var funcionAjax=$.ajax({
-		url:"nexo.php",
-		type:"post",
-		data:{queHacer:"MostrarGrilla"}
-	});
-	funcionAjax.done(function(retorno){
-		$("#principal").html(retorno);
-		$("#informe").html("Correcto grilla!!!");	
-	});
-}
-
 function BorrarCD(idParametro)
 {
 	//alert(idParametro);
@@ -23,7 +10,7 @@ function BorrarCD(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
-		MostrarGrilla();
+		Mostrar("MostrarGrilla");
 		$("#informe").html("cantidad de eliminados "+ retorno);	
 		
 	});
@@ -74,7 +61,7 @@ function GuardarCD()
 		}
 	});
 	funcionAjax.done(function(retorno){
-		MostrarGrilla();
+			Mostrar("MostrarGrilla");
 		$("#informe").html("cantidad de agregados "+ retorno);	
 		
 	});
