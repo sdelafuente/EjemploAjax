@@ -11,7 +11,6 @@ function MostrarGrilla()
 	});
 }
 
-
 function BorrarCD(idParametro)
 {
 	//alert(idParametro);
@@ -32,10 +31,28 @@ function BorrarCD(idParametro)
 		$("#informe").html(retorno.responseText);	
 	});	
 }
+
 function EditarCD(idParametro)
 {
-	alert(idParametro);
-		
+	var funcionAjax=$.ajax({
+		url:"nexo.php",
+		type:"post",
+		data:{
+			queHacer:"TraerCD",
+			id:idParametro	
+		}
+	});
+	funcionAjax.done(function(retorno){
+		var cd =JSON.parse(retorno);	
+		$("#idCD").val(cd.id);
+		$("#cantante").val(cd.cantante);
+		$("#titulo").val(cd.titulo);
+		$("#anio").val(cd.año);
+	});
+	funcionAjax.fail(function(retorno){	
+		$("#informe").html(retorno.responseText);	
+	});	
+	Mostrar("MostrarFormAlta");
 }
 
 function GuardarCD()
