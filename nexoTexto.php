@@ -1,4 +1,3 @@
 <?php 
-			include("partes/texto.php");
-
+	include("partes/texto.php");
  ?>

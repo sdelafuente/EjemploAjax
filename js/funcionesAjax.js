@@ -1,6 +1,7 @@
 
 function MostrarError()
 {
+	/*	
 	var funcionAjax=$.ajax({url:"nexoNoExiste.php",type:"post",data:{queHacer:"MostrarTexto"}});
 	funcionAjax.done(function(retorno){
 		$("#principal").html(retorno);
@@ -13,9 +14,26 @@ function MostrarError()
 	funcionAjax.always(function(retorno){
 		//alert("siempre "+retorno.statusText);
 	});
+	*/
+	/* Mi Funcion Ajax */
+	$.ajax({url:"nexoNoExiste.php"}).then(function(datosCorrectos){
+		alert("primero");
+	}, function(error){
+		console.info("Objeto respuesta",error);
+		$("#informe").html(error.responseText);
+	});
 }
 function MostrarSinParametros()
 {
+	//nexoTexto.php
+	$.ajax({url:"nexoTexto.php"}).then(function ok(respuesta){
+		//alert(respuesta);
+		$("#principal").html(respuesta);
+	}, function mal(error){
+		console.info("Objeto respuesta",error);
+		//alert(error);
+	});
+	/*
 	var funcionAjax=$.ajax({url:"nexoTexto.php"});
 
 	funcionAjax.done(function(retorno){
@@ -30,6 +48,7 @@ function MostrarSinParametros()
 		//alert("siempre "+retorno.statusText);
 
 	});
+	*/
 }
 
 function Mostrar(queMostrar)
