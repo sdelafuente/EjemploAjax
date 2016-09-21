@@ -9,19 +9,19 @@ switch ($queHago) {
 		include("partes/imagen.php");
 		break;
 	case 'video':
-			include("partes/video.html");
+		include("partes/video.html");
 		break;	
 	case 'MostarBotones':
-			include("partes/botonesABM.php");
+		include("partes/botonesABM.php");
 		break;
 	case 'MostrarGrilla':
-			include("partes/formGrilla.php");
+		include("partes/formGrilla.php");
 		break;
 	case 'MostarLogin':
-			include("partes/formLogin.php");
+		include("partes/formLogin.php");
 		break;
 	case 'MostrarFormAlta':
-			include("partes/formCd.php");
+		include("partes/formCd.php");
 		break;
 	case 'BorrarCD':
 			$cd = new cd();

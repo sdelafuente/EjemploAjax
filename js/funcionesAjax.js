@@ -53,7 +53,18 @@ function MostrarSinParametros()
 
 function Mostrar(queMostrar)
 {
-		//alert(queMostrar);
+	//alert(queMostrar);
+	/* funcion Ajax 
+		trabaja con parametros a modo array {clave:valor}
+			- url
+			- type
+			- data
+		Puede pasarsele como valor, otro objeto Json	
+	*/
+	$.ajax({url:"nexo.php", type:"post", data:{queHacer:queMostrar}}).then(function (exito){
+		$('#principal').html(exito);
+	}, function (error){});
+	/*
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -71,6 +82,7 @@ function Mostrar(queMostrar)
 		//alert("siempre "+retorno.statusText);
 
 	});
+	*/
 }
 
 function MostarLogin()
