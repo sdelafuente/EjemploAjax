@@ -58,6 +58,7 @@ class cd
 
 	  public function ModificarCdParametros()
 	 {
+			
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("
 				update cds 
@@ -69,8 +70,8 @@ class cd
 			$consulta->bindValue(':titulo',$this->titulo, PDO::PARAM_INT);
 			$consulta->bindValue(':anio', $this->año, PDO::PARAM_STR);
 			$consulta->bindValue(':cantante', $this->cantante, PDO::PARAM_STR);
-			sleep(5);
 			return $consulta->execute();
+
 	 }
 
 	 public function InsertarElCdParametros()

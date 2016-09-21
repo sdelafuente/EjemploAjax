@@ -30,7 +30,9 @@ function EditarCD(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
+		
 		Mostrar("MostrarFormAlta");
+
 		var cd =JSON.parse(retorno);	
 		$("#idCD").val(cd.id);
 		$("#cantante").val(cd.cantante);
