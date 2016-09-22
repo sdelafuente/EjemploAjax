@@ -1,6 +1,13 @@
 
 function MostrarError()
 {
+	/* Mi Funcion Ajax */
+	$.ajax({url:"nexoNoExiste.php"}).then(function(datosCorrectos){
+		alert("primero");
+	}, function(error){
+		console.info("Objeto respuesta",error);
+		$("#informe").html(error.responseText);
+	});
 	/*	
 	var funcionAjax=$.ajax({url:"nexoNoExiste.php",type:"post",data:{queHacer:"MostrarTexto"}});
 	funcionAjax.done(function(retorno){
@@ -15,14 +22,9 @@ function MostrarError()
 		//alert("siempre "+retorno.statusText);
 	});
 	*/
-	/* Mi Funcion Ajax */
-	$.ajax({url:"nexoNoExiste.php"}).then(function(datosCorrectos){
-		alert("primero");
-	}, function(error){
-		console.info("Objeto respuesta",error);
-		$("#informe").html(error.responseText);
-	});
+	
 }
+
 function MostrarSinParametros()
 {
 	//nexoTexto.php
@@ -30,7 +32,10 @@ function MostrarSinParametros()
 		//alert(respuesta);
 		$("#principal").html(respuesta);
 	}, function mal(error){
-		console.info("Objeto respuesta",error);
+		$("#principal").html(":(");
+		$("#informe").html(error.responseText);	
+
+		//console.info("Objeto respuesta",error);
 		//alert(error);
 	});
 	/*
@@ -63,7 +68,11 @@ function Mostrar(queMostrar)
 	*/
 	$.ajax({url:"nexo.php", type:"post", data:{queHacer:queMostrar}}).then(function (exito){
 		$('#principal').html(exito);
-	}, function (error){});
+		$("#informe").html("Correcto!!!");	
+	}, function (error){
+		$("#principal").html(":(");
+		$("#informe").html(error.responseText);	
+	});
 	/*
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
@@ -88,6 +97,20 @@ function Mostrar(queMostrar)
 function MostarLogin()
 {
 		//alert(queMostrar);
+
+	$.ajax( {
+				url:"nexo.php",
+				type:"post",
+				data:{queHacer:"MostarLogin"
+			}}).then( function ok(exito){
+						$("#principal").html(exito);
+						$("#informe").html("Correcto Form login!!!");	
+					}, function fail(error){
+						$("#botonesABM").html(":(");
+						$("#informe").html(error.responseText);							
+					});	
+
+	/*
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -105,4 +128,5 @@ function MostarLogin()
 		//alert("siempre "+retorno.statusText);
 
 	});
+	*/
 }
