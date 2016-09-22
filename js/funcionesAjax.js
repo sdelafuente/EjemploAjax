@@ -98,7 +98,7 @@ function MostarLogin()
 {
 		//alert(queMostrar);
 
-	$.ajax( {
+	$.ajax({
 				url:"nexo.php",
 				type:"post",
 				data:{queHacer:"MostarLogin"
@@ -108,7 +108,7 @@ function MostarLogin()
 					}, function fail(error){
 						$("#botonesABM").html(":(");
 						$("#informe").html(error.responseText);							
-					});	
+			});	
 
 	/*
 	var funcionAjax=$.ajax({
